@@ -47,8 +47,7 @@ class albumController {
 
     async updateAlbum(req, res) {
         try {
-            const body = req.body
-            const result = await albumModel.update(body, req.params.id)
+            const result = await albumModel.update(req.body, req.params.id)
             res.status(204).json(result)
         }
         catch (error) {
